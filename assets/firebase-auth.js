@@ -12,7 +12,7 @@ async function boot(){
  const emit=u=>{window.JarvisAuth.user=u||null;window.dispatchEvent(new CustomEvent('jarvis-auth',{detail:u||null}))};
  a.onAuthStateChanged(auth,emit);
  window.JarvisAuth={
-  configured:true,get user(){return auth?.currentUser||null},
+  configured:true,get user(){return auth?.currentUser||null},get app(){return app},
   google:async()=>{const p=new a.GoogleAuthProvider();return (await a.signInWithPopup(auth,p)).user},
   email:async(email,password)=>{return (await a.signInWithEmailAndPassword(auth,email,password)).user},
   signup:async(email,password)=>{return (await a.createUserWithEmailAndPassword(auth,email,password)).user},
