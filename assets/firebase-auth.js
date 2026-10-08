@@ -6,6 +6,8 @@ async function boot(){
  const [{initializeApp},{getApps}]=await Promise.all([import('https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js'),import('https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js')]);
  app=getApps().length?getApps()[0]:initializeApp(firebaseConfig);
  const a=await import('https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js');
+ const analytics=await import('https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js');
+ try{analytics.getAnalytics(app)}catch(_){/* analytics may be unavailable in some browsers */}
  auth=a.getAuth(app);
  const emit=u=>{window.JarvisAuth.user=u||null;window.dispatchEvent(new CustomEvent('jarvis-auth',{detail:u||null}))};
  a.onAuthStateChanged(auth,emit);
