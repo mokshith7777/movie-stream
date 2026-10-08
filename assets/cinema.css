@@ -27,3 +27,39 @@
 .posterFallback span{font-size:38px;letter-spacing:.12em;color:#fff;text-shadow:0 0 25px #ff174455}
 .posterFallback small{font-size:9px;color:#8b97aa;letter-spacing:.18em}
 @keyframes marvelOrbit{to{transform:rotate(360deg)}}@keyframes marvelPulse{50%{transform:scale(1.12);filter:drop-shadow(0 0 12px #ff1744)}}@keyframes prabhasSpin{to{transform:rotate(360deg)}}@keyframes prabhasGlow{50%{transform:scale(1.1);filter:drop-shadow(0 0 12px #00d9ff)}}@keyframes tabPulse{50%{opacity:.35;width:70px}}@keyframes scan{from{transform:translateX(-40%) rotate(-35deg)}to{transform:translateX(40%) rotate(-35deg)}}
+
+/* =========================================================
+   JARVIS CINEMA // UI SYSTEM V3
+   Ported from the cinematic React design language
+   ========================================================= */
+:root{--marvel-red:#e62429;--hud-cyan:#00d2ff;--prabhas-gold:#f59e0b;--prabhas-orange:#ea580c}
+body[data-universe="marvel"]:before{background:radial-gradient(circle at 88% 8%,rgba(230,36,41,.18),transparent 28%),radial-gradient(circle at 12% 62%,rgba(0,210,255,.13),transparent 32%),linear-gradient(135deg,#03050a,#080d16 55%,#05070c)}
+body[data-universe="marvel"]:after{opacity:.18;background-image:radial-gradient(rgba(0,210,255,.12) 1px,transparent 1px),radial-gradient(rgba(230,36,41,.08) 1px,transparent 1px);background-size:32px 32px;background-position:0 0,16px 16px}
+body[data-universe="prabhas"]:before{background:radial-gradient(circle at 82% 8%,rgba(245,158,11,.18),transparent 30%),radial-gradient(circle at 14% 72%,rgba(234,88,12,.11),transparent 34%),linear-gradient(135deg,#090705,#0d0b08 55%,#050403)}
+body[data-universe="prabhas"]:after{opacity:.2;background-image:radial-gradient(rgba(245,158,11,.12) 1px,transparent 1px),radial-gradient(rgba(234,88,12,.08) 1px,transparent 1px);background-size:36px 36px;background-position:0 0,18px 18px}
+@keyframes uiArcRotate{to{transform:rotate(360deg)}}
+@keyframes uiHudPulse{0%,100%{opacity:.85;transform:scale(1);filter:drop-shadow(0 0 8px rgba(0,210,255,.35))}50%{opacity:1;transform:scale(1.04);filter:drop-shadow(0 0 18px rgba(0,210,255,.75))}}
+@keyframes uiMarvelScan{0%{transform:translateX(-150%) skewX(-18deg);opacity:0}20%,70%{opacity:.85}100%{transform:translateX(600%) skewX(-18deg);opacity:0}}
+@keyframes uiEmber{0%,100%{transform:translateY(12px) scale(.65);opacity:0}30%{opacity:.7}70%{opacity:.18}100%{transform:translateY(-64px) scale(1.2);opacity:0}}
+@keyframes uiGoldShimmer{0%{transform:translateX(-130%) rotate(12deg);opacity:0}45%{opacity:.6}100%{transform:translateX(300%) rotate(12deg);opacity:0}}
+@keyframes uiGoldPulse{0%,100%{box-shadow:0 0 15px rgba(245,158,11,.25),0 0 30px rgba(234,88,12,.15)}50%{box-shadow:0 0 28px rgba(245,158,11,.6),0 0 48px rgba(234,88,12,.35)}}
+body[data-universe="marvel"] .hero h1 span{background-image:linear-gradient(110deg,#fff,#00d2ff 55%,#e62429);text-shadow:0 0 30px rgba(0,210,255,.12)}
+body[data-universe="prabhas"] .hero h1 span{background-image:linear-gradient(110deg,#fff,#fef08a 35%,#f59e0b 68%,#ea580c)}
+body[data-universe="marvel"] .marvelCard{border-color:rgba(230,36,41,.4);box-shadow:inset 0 0 28px rgba(0,210,255,.035)}
+body[data-universe="prabhas"] .prabhasCard{border-color:rgba(245,158,11,.42);box-shadow:inset 0 0 28px rgba(245,158,11,.035)}
+body[data-universe="prabhas"] .prabhasCard b{color:var(--prabhas-gold)!important;text-shadow:0 0 20px rgba(245,158,11,.8)}
+body[data-universe="prabhas"] .prabhasCard:after{background:conic-gradient(from 0deg,transparent,rgba(245,158,11,.5),transparent 30%,rgba(234,88,12,.35),transparent 65%)}
+body[data-universe="marvel"] .marvelCard:after{border-color:rgba(0,210,255,.45);border-right-color:rgba(230,36,41,.8);animation:uiArcRotate 10s linear infinite}
+body[data-universe="marvel"] .marvelCard:before{width:26%;height:100%;right:auto;top:0;left:-45%;border:0;border-radius:0;background:linear-gradient(90deg,transparent,rgba(0,210,255,.22),transparent);transform:skewX(-18deg);animation:uiMarvelScan 4.8s ease-in-out infinite}
+body[data-universe="prabhas"] .prabhasCard:after{content:"";position:absolute;top:-30%;left:-30%;width:30%;height:170%;border:0;border-radius:0;background:linear-gradient(90deg,transparent,rgba(245,158,11,.3),rgba(255,255,255,.12),transparent);transform:rotate(12deg);animation:uiGoldShimmer 5.4s ease-in-out infinite}
+body[data-universe="prabhas"] .prabhasCard:before{content:"•";position:absolute;inset:auto 16% 13% auto;width:auto;height:auto;border:0;font-size:18px;color:rgba(245,158,11,.9);text-shadow:0 0 14px rgba(245,158,11,.8);animation:uiEmber 2.8s ease-in-out infinite;opacity:1}
+body[data-universe="prabhas"] .universeTab.active,body[data-universe="prabhas"] .universeTab:hover{border-color:rgba(245,158,11,.55);background:linear-gradient(110deg,rgba(245,158,11,.14),rgba(234,88,12,.06));box-shadow:0 0 24px rgba(245,158,11,.12)}
+body[data-universe="prabhas"] .chip.active,body[data-universe="prabhas"] .chip:hover{border-color:rgba(245,158,11,.55);background:rgba(245,158,11,.08)}
+body[data-universe="prabhas"] .badge{border-color:rgba(245,158,11,.25)}
+body[data-universe="prabhas"] .view{background:linear-gradient(120deg,#f59e0b,#ea580c);color:#120a02}
+body[data-universe="prabhas"] .eyebrow{color:#f59e0b}
+body[data-universe="prabhas"] .search{border-color:rgba(245,158,11,.3);box-shadow:0 0 35px rgba(245,158,11,.07)}
+.posterFallback{background:radial-gradient(circle at 50% 20%,rgba(0,210,255,.16),transparent 35%),linear-gradient(145deg,#080e17,#07101a 70%)}
+body[data-universe="prabhas"] .posterFallback{background:radial-gradient(circle at 50% 20%,rgba(245,158,11,.18),transparent 35%),linear-gradient(145deg,#171008,#0c0a07 70%)}
+body[data-universe="prabhas"] .posterFallback span{text-shadow:0 0 25px rgba(245,158,11,.4)}
+@media(prefers-reduced-motion:reduce){body[data-universe="marvel"] .marvelCard:before,body[data-universe="marvel"] .marvelCard:after,body[data-universe="prabhas"] .prabhasCard:before,body[data-universe="prabhas"] .prabhasCard:after{animation:none!important}}
