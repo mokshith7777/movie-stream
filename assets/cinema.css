@@ -9,3 +9,21 @@
 .marvelCard{background:radial-gradient(circle at 90% 10%,#ff174422,transparent 45%),linear-gradient(135deg,#12070c,#08111b)!important}
 .prabhasCard{background:radial-gradient(circle at 90% 10%,#00d9ff22,transparent 45%),linear-gradient(135deg,#071018,#090711)!important}
 @media(max-width:650px){.authTop{padding:8px 9px}.universeTabs{overflow:auto}.universeTab{flex:1;min-width:130px}}
+
+/* Universe-specific cinematic motion systems */
+.universeTabs{position:relative}
+.universeTabs:after{content:"";position:absolute;left:0;bottom:-7px;width:42px;height:2px;background:var(--cyan);box-shadow:0 0 18px var(--cyan);animation:tabPulse 2.4s ease-in-out infinite}
+.marvelCard{isolation:isolate;background:radial-gradient(circle at 82% 12%,#ff17444d,transparent 34%),radial-gradient(circle at 10% 90%,#ff17441c,transparent 45%),linear-gradient(135deg,#18050b,#090d16 62%,#12050a)!important}
+.marvelCard:after{content:"";position:absolute;width:180px;height:180px;right:-70px;top:-80px;border:1px solid #ff174455;border-radius:50%;box-shadow:0 0 35px #ff174422;animation:marvelOrbit 9s linear infinite}
+.marvelCard b{color:#ff1744!important;text-shadow:0 0 18px #ff1744;animation:marvelPulse 2s ease-in-out infinite}
+.prabhasCard{isolation:isolate;background:radial-gradient(circle at 80% 20%,#00d9ff42,transparent 32%),radial-gradient(circle at 18% 90%,#6b35ff25,transparent 42%),linear-gradient(135deg,#06131a,#0b0919 65%,#06131a)!important}
+.prabhasCard:after{content:"";position:absolute;inset:auto -45px -85px auto;width:220px;height:220px;border-radius:50%;background:conic-gradient(from 0deg,transparent,#00d9ff44,transparent 30%,#8b5cff33,transparent 65%);filter:blur(2px);animation:prabhasSpin 7s linear infinite}
+.prabhasCard b{color:#00d9ff!important;text-shadow:0 0 20px #00d9ff;animation:prabhasGlow 2.8s ease-in-out infinite}
+.marvelCard span,.marvelCard small,.prabhasCard span,.prabhasCard small{position:relative;z-index:2}
+.marvelCard:hover{transform:translateY(-6px) scale(1.01)!important;box-shadow:0 0 35px #ff174426,0 20px 55px #0009!important}
+.prabhasCard:hover{transform:translateY(-6px) scale(1.01)!important;box-shadow:0 0 35px #00d9ff26,0 20px 55px #0009!important}
+.posterFallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(circle at 50% 20%,#ff17442a,transparent 35%),linear-gradient(145deg,#12070c,#07101a 70%);font-family:Orbitron;position:relative;overflow:hidden}
+.posterFallback:before{content:"";position:absolute;width:180%;height:1px;background:#00d9ff44;transform:rotate(-35deg);animation:scan 4s linear infinite}
+.posterFallback span{font-size:38px;letter-spacing:.12em;color:#fff;text-shadow:0 0 25px #ff174455}
+.posterFallback small{font-size:9px;color:#8b97aa;letter-spacing:.18em}
+@keyframes marvelOrbit{to{transform:rotate(360deg)}}@keyframes marvelPulse{50%{transform:scale(1.12);filter:drop-shadow(0 0 12px #ff1744)}}@keyframes prabhasSpin{to{transform:rotate(360deg)}}@keyframes prabhasGlow{50%{transform:scale(1.1);filter:drop-shadow(0 0 12px #00d9ff)}}@keyframes tabPulse{50%{opacity:.35;width:70px}}@keyframes scan{from{transform:translateX(-40%) rotate(-35deg)}to{transform:translateX(40%) rotate(-35deg)}}
