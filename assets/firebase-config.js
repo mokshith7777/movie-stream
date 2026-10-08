@@ -1,1 +1,1 @@
-export const firebaseConfig={apiKey:"PASTE_FIREBASE_API_KEY",authDomain:"PASTE_PROJECT.firebaseapp.com",projectId:"PASTE_PROJECT_ID",storageBucket:"PASTE_PROJECT.firebasestorage.app",messagingSenderId:"PASTE_SENDER_ID",appId:"PASTE_APP_ID"};
+export const firebaseConfig={apiKey:"AIzaSyCSrzDGhFKr7ThNbyuS7yi0yt10o41xyus",authDomain:"device-streaming-2423c704.firebaseapp.com",projectId:"device-streaming-2423c704",storageBucket:"device-streaming-2423c704.firebasestorage.app",messagingSenderId:"222127049582",appId:"1:222127049582:web:e50156bdd8cd9249148f7f"};
